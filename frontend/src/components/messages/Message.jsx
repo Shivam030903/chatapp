@@ -10,7 +10,9 @@ const Message = ({message}) => {
     const formatedTime = extractTime(message.createdAt)
     const chatClassName = fromMe ? "chat-end" : "chat-start"
     // const profilePic = fromMe ? authUser.profilePic : selectedConversation.profilePic 
-    const bubbleBgColor = fromMe ? "bg-blue-500" : "bg-gray-400" 
+    const bubbleBgColor = fromMe ? "bg-blue-500" : "bg-gray-400"
+    
+    const shakeClass = message.shouldShake ? "shake" : ""
   return (
     <div className={`chat ${chatClassName}`}>
         <div className="chat-image avatar">
@@ -18,7 +20,7 @@ const Message = ({message}) => {
                 <img src="" alt="chat buble " />
             </div>
         </div>
-        <div className={`chat-bubble pb-2 text-white ${bubbleBgColor}`}>
+        <div className={`chat-bubble pb-2 text-white ${bubbleBgColor} ${shakeClass}` }>
             {message.message}
         </div>
         <div className={'chat-footer opacity-50 text-xs flex gap-1 items-center'}>{formatedTime}</div>
