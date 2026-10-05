@@ -1,7 +1,7 @@
 import bcrypt from "bcrypt"
 
 import userModel from "../models/user.model.js"
-import generateTokenAndSetCookie from "../utils/generateTocken.js"
+import generateTokenAndSetCookie from "../utils/generateToken.js"
 export const createUser = async(req,res)=>{
     try {
         const {fullName,userName,password,confirmPassword,gender} = req.body
