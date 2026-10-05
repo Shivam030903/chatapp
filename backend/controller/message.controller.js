@@ -15,7 +15,7 @@ export const sendMessage = async (req, res) => {
 
     if(!conversation){
         conversation = await conversationModel.create({
-            participants: [senderId,reciverID]
+            participants: [senderId,reciverId]
         })
     }
     const newMessage = new messageModel({
